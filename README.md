@@ -1,12 +1,34 @@
-# React + Vite
+# Music Player
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a simple, stylish and fully functional music player built using **React** and **Tailwind CSS**. 
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+##  Features
 
-## Expanding the ESLint configuration
+-  Play & Pause songs
+-  Next & Previous song navigation
+-  Live progress tracking with formatted time
+-  Custom audio controls (no default browser UI)
+-  Tailwind-based responsive and clean UI
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 📸 Preview
+
+![image](https://github.com/user-attachments/assets/be34ad26-661e-45a4-b9c0-7e3e3569f341)
+
+![image](https://github.com/user-attachments/assets/753e11a3-c7d2-4cd0-943d-7d23c4828bf4)
+
+
+---
+
+## 🛠 Technologies Used
+
+- [React](https://reactjs.org/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- JavaScript (ES6+)
+- HTML5 `<audio>` API
+
+
+
