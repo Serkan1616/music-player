@@ -1,26 +1,35 @@
 import { useRef, useState, useEffect } from "react";
 import "./App.css";
-import cover_1 from "./assets/cover-1.jpg";
-import cover_2 from "./assets/cover-2.jpg";
-import song_1 from "./assets/forest-lullaby-110624.mp3";
-import song_2 from "./assets/lost-in-city-lights-145038.mp3";
 import stop_play from "./assets/Stop_and_play_fill.svg";
 import stop_play_reverse from "./assets/Stop_and_play_fill-1.svg";
-import Play_fill from "./assets/Play_fill.svg";
+import pause from "./assets/pause.svg";
+import play_button from "./assets/play-buttton.svg";
 
 function App() {
   const songs = [
     {
-      title: "Lost in the City Lights",
-      author: "Cosmo Sheldrake",
-      src: song_1,
-      img: cover_1,
+      title: "Yiğidim Aslanım",
+      author: "Serkan Durmaz",
+      src: "/covers/yigidim.mp3",
+      img: "/pictures/img1.jpg",
     },
     {
-      title: "Forest Lullaby",
-      author: "Lesfm",
-      src: song_2,
-      img: cover_2,
+      title: "Canon in D",
+      author: "Serkan Durmaz",
+      src: "/covers/canond.mp3",
+      img: "/pictures/img3.jpg",
+    },
+    {
+      title: "I Giorni",
+      author: "Serkan Durmaz",
+      src: "/covers/ı giorni.mp3",
+      img: "/pictures/img2.jpg",
+    },
+    {
+      title: "Solas",
+      author: "Serkan Durmaz",
+      src: "/covers/solas.mp3",
+      img: "/pictures/img4.jpg",
     },
   ];
 
@@ -83,21 +92,23 @@ function App() {
   };
 
   return (
-    <div className="flex justify-center items-center min-h-screen bg-[url('/gradient-bg.jpg')] bg-cover bg-no-repeat bg-center font-sora">
-      <div className="flex flex-col justify-center items-center gap-5 w-[350px] h-[500px] rounded-2xl bg-[#212936] p-4">
-        <img
-          className="h-[275px] w-[300px] rounded-2xl object-cover"
-          src={currentSong.img}
-          alt={currentSong.title}
-        />
+    <div className="flex justify-center items-center min-h-screen bg-[radial-gradient(circle_at_center,_#ffffff_10%,_#333333_70%,_#000000_100%)] font-sora">
+      <div className="flex flex-col justify-center items-center gap-5 w-[350px] h-[500px] rounded-2xl bg-[#111315eb] p-4 shadow-lg">
+        <div className="relative h-[275px] w-[300px] rounded-2xl overflow-hidden">
+          <img
+            className="h-full w-full object-cover brightness-[0.7]"
+            src={currentSong.img}
+            alt={currentSong.title}
+          />
+        </div>
         <div className="text-center">
-          <h1 className="text-[#E5E7EB] text-[16px] font-semibold">
+          <h1 className="text-[#F1F2F6] text-[16px] font-semibold">
             {currentSong.title}
           </h1>
-          <p className="text-[#e5e7eb63] text-[12px]">{currentSong.author}</p>
+          <p className="text-[#a1a1aa] text-[12px]">{currentSong.author}</p>
         </div>
         <div className="flex flex-col w-full">
-          <div className="flex justify-between text-[#e5e7eb63] text-[10px]">
+          <div className="flex justify-between text-[#a1a1aa] text-[10px]">
             <span>{formatTime(currentTime)}</span>
             <span>{formatTime(duration)}</span>
           </div>
@@ -105,7 +116,7 @@ function App() {
             type="range"
             value={progress}
             onChange={handleProgressChange}
-            className="w-full accent-[#C93B76]  h-[4px]  cursor-pointer"
+            className="w-full accent-[#3F51B5] h-[4px] cursor-pointer"
           />
         </div>
 
@@ -115,12 +126,12 @@ function App() {
           </button>
           <button
             onClick={togglePlay}
-            className="bg-[#C93B76] rounded-full cursor-pointer p-3 shadow-[0px_8px_16px_rgba(201,59,118,0.25)]"
+            className="bg-[#3F51B5] rounded-full flex justify-center items-center cursor-pointer p-3 shadow-[0px_8px_16px_rgba(63,81,181,0.25)]"
           >
             <img
-              src={Play_fill}
-              alt="Play"
-              className={`w-6 h-6 ${isPlaying ? "rotate-360" : ""}`}
+              src={isPlaying ? pause : play_button}
+              alt={isPlaying ? "Pause" : "Play"}
+              className="w-3 h-3"
             />
           </button>
           <button className="cursor-pointer" onClick={playNext}>
